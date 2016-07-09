@@ -1,7 +1,11 @@
 package sort;
 
 import java.util.*;
-
+/**
+ *  ç»å…¸æ’åºç®—æ³•
+ * @author waldoudou
+ *
+ */
 public class Sort {
 	public static void main(String[] args) {
 		// HeapSort heapsort=new HeapSort();
@@ -169,7 +173,7 @@ class MergeSort {
 		for (int j = 0; j < n2; j++) {
 			R[j] = a[q + j + 1];
 		}
-		L[n1] = (int) (1.0 / 0); // Ğ¡Êı³ıÒÔ0¿ÉÒÔµÃµ½Ò»¸öÎŞÇî´óÊı
+		L[n1] = (int) (1.0 / 0); // Ğ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½ÔµÃµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		R[n2] = (int) (1.0 / 0);
 		// System.out.println(L[n1]);
 		int i = 0, j = 0;
@@ -205,7 +209,7 @@ class PSort {
 	}
 }
 
-class CountingSort // ÏßĞÎÊ±¼äÅÅĞò£º¼ÆÊıÅÅĞò
+class CountingSort // ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ò£º¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 {
 	public void sort() {
 		int[] a = { 12, 25, 67, 98, 22, 46, 55, 30, 12, 29 };
