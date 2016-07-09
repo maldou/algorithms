@@ -1,7 +1,6 @@
 package number;
 
 /**
- * Êı×Öµ¹ÖÃ£¬±ÈÈç£º
  * input: 123000; output:321
  * @author meng
  *
