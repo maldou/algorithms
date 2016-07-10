@@ -5,11 +5,12 @@ import java.util.Arrays;
 import java.util.List;
 /**
  * 编辑距离，动态规划
+ * 在实际应用场景中，为了计算两个list（串）之间的编辑距离，需要对输入进行归一化（降噪）
  * @author waldoudou
  *
  * @param <E>
  */
-public class EditDistance<E> {
+public class EditDistance<E extends Comparable<E>> {
 	
 	private int updateCost = 1;
 	private int insertCost = 1;
@@ -46,7 +47,7 @@ public class EditDistance<E> {
 			for(int j = 1; j <= list2.size(); j++) {
 				E e2 = list2.get(j - 1);
 				int min = Math.min(editArray[i - 1][j] + deleteCost , editArray[i][j - 1] + insertCost);
-				int r = e1.equals(e2) ? 0 : updateCost;
+				int r = e1.compareTo(e2) == 0? 0 : updateCost;
 				min = Math.min(min, editArray[i - 1][j- 1] + r);
 				editArray[i][j] = min;
 			}
@@ -105,20 +106,24 @@ public class EditDistance<E> {
 	}
 }
 
-class Entity {
+class Entity implements Comparable<Entity>{
 	private int index;
 	
 	public Entity(int index) {
 		this.index = index;
 	}
-	
+
 	@Override
-	public boolean equals(Object other) {
-		if(other instanceof Entity) {
-			Entity e = (Entity)other;
-			return e.index == index;
+	public int compareTo(Entity o) {
+		if(index > o.index) {
+			return 1;
 		}
-		return false;
+		else if(index < o.index) {
+			return -1;
+		}
+		else {
+			return 0;
+		}
 	}
 	
 }
